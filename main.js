@@ -12,15 +12,9 @@ const client = new Client({
     }
 })
 
-
 // escuchar el evento 'ready' para saber cuándo el cliente está listo
 client.on('ready', async () => {
     console.log('El cliente esta listo')
-
-    await client.sendMessage(
-        '8297422921@c.us',
-        'Prueba bot'
-    )
 })
 
 // generar el código QR para la autenticación
@@ -42,7 +36,7 @@ client.on('message_create', async (message) => {
 
         const telLimpio = tel.replace(/[-\s]/g, '')// Limpiar el número de teléfono
         
-        const contacto = `${telLimpio}@c.us`
+        const contacto = `1${telLimpio}@c.us`
 
         const numeroExiste = await client.isRegisteredUser(contacto)
 
